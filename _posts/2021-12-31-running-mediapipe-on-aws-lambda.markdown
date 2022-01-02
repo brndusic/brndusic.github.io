@@ -8,7 +8,8 @@ MediaPipe is a framework for building multimodal (eg. video, audio, any time ser
 
 I will try to go through whole process of creating docker image with Python and MediaPipe, then will walk through setting up docker image as a AWS Lambda function.
 
-# AWS Lambda unction code
+![MediaPipe AWS Lambda function code](/assets/img/mediapipe.png)
+# MediaPipe AWS Lambda function code
 
 A basic handler function which reads files for processing with MediaPipe from AWS S3 looks like:
 
@@ -170,6 +171,7 @@ docker tag aws_lambda_mediapipe:latest 1234567890.dkr.ecr.us-west-1.amazonaws.co
 docker push 1234567890.dkr.ecr.us-west-1.amazonaws.com/aws_lambda_mediapipe:latest
 ```
 
+![Setting up AWS Lambda function](/assets/img/aws-lambda-logo.svg)
 # Setting up AWS Lambda function
 
 Now having a docker image on AWS ECR, AWS Lambda function should be created. Before creating function AWS Lambda execution role is [needs to be created][lambda-execution-role] and then its reference user as a `--role` parameter while creating function.
